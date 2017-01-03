@@ -41,7 +41,7 @@ def find_number(word):
 			
 	return number
 			
-def find_gem(number):
+
 	
 			
 		
