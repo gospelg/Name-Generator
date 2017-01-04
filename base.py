@@ -1,3 +1,6 @@
+#this module contains sample dictionaries, with basic unmodified values. The learning function can edit these, assigning 
+#probabilities to each value in each dictionary.
+
 a = {
 	'a':0,
 	'b':0,
