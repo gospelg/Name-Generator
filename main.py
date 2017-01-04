@@ -164,11 +164,7 @@ def find_frequency(place, x):
 		
 		
 		
-		
-def first_char(place_names):
-	for place in place_names:
-		i = place[0]
-		if i in base.first_letter.items():
+
 			
 			
 			
