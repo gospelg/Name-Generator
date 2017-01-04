@@ -1,4 +1,5 @@
 import base
+import json
 
 #this function accounts for the first letter of a word. It is dependent on the first_letter dictionary in base weights.py
 def first_char(place_names):
@@ -168,6 +169,12 @@ def first_char(place_names):
 	for place in place_names:
 		i = place[0]
 		if i in base.first_letter.items():
+			
+			
+			
+#example of how to dump dictionaries in a file, which will be used as the knowledge of each language
+#with open('test.json', 'w') as f:
+#	json.dump(base.r, f)
 						
 	
 			
