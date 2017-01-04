@@ -163,7 +163,11 @@ def find_frequency(place, x):
 		pass
 		
 		
-		
+def main():
+	dialect = raw_input('What language group do these places belong to? \n ')
+	print 'Ok. Process initiated...'
+	
+	
 
 			
 			
