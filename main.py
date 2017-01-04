@@ -40,8 +40,13 @@ def find_number(word):
 				number += key
 			
 	return number
-			
 
+#this function accounts for the first letter of a word. It is dependent on the first_letter dictionary in base weights.py
+def first_char(place_names):
+	for place in place_names:
+		i = place[0]
+		if i in first_letter:
+			first_letter[i] = first_letter[i] + 1
 	
 			
 		
