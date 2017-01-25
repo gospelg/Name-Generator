@@ -1,6 +1,8 @@
 import base
 import json
 import csv
+import os
+
 
 #this function accounts for the first letter of a word. It is dependent on the first_letter dictionary in base weights.py
 def first_char(place_names):
@@ -165,14 +167,14 @@ def find_frequency(place, x):
 	else:
 		pass
 		
-#def revolver():                                     this will go in main script
-#	from string import ascii_lowercase
-#	alphabet = []
-#	for letter in ascii_lowercase:
-#		alphabet.append(letter)
-#	alphabet.append('blank')
-#	alphabet.append('first letter')
-#	return alphabet
+def alpha_list():                           
+	from string import ascii_lowercase
+	alphabet = []
+	for letter in ascii_lowercase:
+		alphabet.append(letter)
+	alphabet.append('blank')
+	alphabet.append('first letter')
+	return alphabet
 
 def importer(the_file, file_type):
 	learninglist = []
@@ -185,11 +187,24 @@ def importer(the_file, file_type):
 			reader = csv.reader(f, delimiter = ',')
 			for i in reader:
 				learninglist.append(i)
+	learninglist = [x.lower() for x in learninglist]
 	return learninglist
 	
 
 		
+def make_dump(language):
+	working_dir = os.path.dirname(os.path.abspath( __file__ ))
+	#create a folder for all the json dumps to go into. Just adds it to the cwd
+	newpath = working_dir + r'\%s' % language
+        if not os.path.exists(newpath):
+		os.makedirs(newpath)
 		
+	alphabet = alpha_list()
+	for i in range(len(alpha_list)):
+		filename = newpath + '\%s.json' % alpha_list[i]
+		with open(filename, 'w') as f:
+			json.dump(base.all_dicts[i], f)	
+	
 def main():
 	lng_group = raw_input('What language group do these places belong to? \n ')
 	print 'Ok. Process initiated...'
@@ -197,21 +212,13 @@ def main():
 	file_type = raw_input('And is this a txt or csv (type txt or csv) \n ')
 	la_lista = importer(the_file, file_type)
 	learn_language(la_lista)
-#	alphabet = revolver() this will go in main script
-	filename = "%s.json" % lng_group
-	with open(filename, 'w') as f:
-		json.dump(base, f)
+	make_dumpe(lng_group)
+	
 	
 main()
-			
-#example of how to dump dictionaries in a file, which will be used as the knowledge of each language
-#with open('test.json', 'w') as f:
-#	json.dump(base.r, f)
 						
 	
 			
-		
-		
 		
 
 		
