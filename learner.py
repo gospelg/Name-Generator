@@ -202,6 +202,7 @@ def main():
 	with open(filename, 'w') as f:
 		json.dump(base, f)
 	
+main()
 			
 #example of how to dump dictionaries in a file, which will be used as the knowledge of each language
 #with open('test.json', 'w') as f:
