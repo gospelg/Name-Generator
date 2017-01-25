@@ -212,7 +212,7 @@ def main():
 	file_type = raw_input('And is this a txt or csv (type txt or csv) \n ')
 	la_lista = importer(the_file, file_type)
 	learn_language(la_lista)
-	make_dumpe(lng_group)
+	make_dump(lng_group)
 	
 	
 main()
