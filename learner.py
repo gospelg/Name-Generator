@@ -1,5 +1,6 @@
 import base
 import json
+import csv
 
 #this function accounts for the first letter of a word. It is dependent on the first_letter dictionary in base weights.py
 def first_char(place_names):
@@ -12,6 +13,8 @@ def first_char(place_names):
 #this is the primary learning function. It takes account for each letter in each word fed into it, and records the frequency
 #of those letters in relation to other letters.
 def learn_language(place_names):
+	
+	first_char(place_names)
 
 	for place in place_names:
 		for i in range(1, len(place) - 1):
@@ -162,14 +165,14 @@ def find_frequency(place, x):
 	else:
 		pass
 		
-def revolver():
-	from string import ascii_lowercase
-	alphabet = []
-	for letter in ascii_lowercase:
-		alphabet.append(letter)
-	alphabet.append('blank')
-	alphabet.append('first letter')
-	return alphabet
+#def revolver():                                     this will go in main script
+#	from string import ascii_lowercase
+#	alphabet = []
+#	for letter in ascii_lowercase:
+#		alphabet.append(letter)
+#	alphabet.append('blank')
+#	alphabet.append('first letter')
+#	return alphabet
 
 def importer(the_file, file_type):
 	learninglist = []
@@ -179,20 +182,23 @@ def importer(the_file, file_type):
 				learninglist.append(line.strip())
 	if file_type == 'csv':
 		with open(the_file, 'r') as f:
-			reader = csv.reader(f, delimiter = ' \n')
+			reader = csv.reader(f, delimiter = ',')
+			for i in reader:
+				learninglist.append(i)
+	return learninglist
 	
 
 		
 		
 def main():
-	dialect = raw_input('What language group do these places belong to? \n ')
+	lng_group = raw_input('What language group do these places belong to? \n ')
 	print 'Ok. Process initiated...'
 	the_file = raw_input('What file do you want to learn from? \n ')
 	file_type = raw_input('And is this a txt or csv (type txt or csv) \n ')
-	
-	
-	alphabet = revolver()
-	filename = "%s.json" % dialect
+	la_lista = importer(the_file, file_type)
+	learn_language(la_lista)
+#	alphabet = revolver() this will go in main script
+	filename = "%s.json" % lng_group
 	with open(filename 'w') as f:
 		json.dump(base, f)
 	
