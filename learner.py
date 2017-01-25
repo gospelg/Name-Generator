@@ -10,6 +10,7 @@ def first_char(place_names):
 		i = place[0]
 		if i in base.first_letter:
 			base.first_letter[i] = base.first_letter[i] + 1
+			base.first_letter['total'] = base.first_letter['total'] + 1
 			
 
 #this is the primary learning function. It takes account for each letter in each word fed into it, and records the frequency
