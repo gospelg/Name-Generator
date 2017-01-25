@@ -171,11 +171,26 @@ def revolver():
 	alphabet.append('first letter')
 	return alphabet
 
+def importer(the_file, file_type):
+	learninglist = []
+	if file_type == 'txt':
+		with open(the_file, 'r') as f:
+			for line in f:
+				learninglist.append(line.strip())
+	if file_type == 'csv':
+		with open(the_file, 'r') as f:
+			reader = csv.reader(f, delimiter = ' \n')
+	
+
 		
 		
 def main():
 	dialect = raw_input('What language group do these places belong to? \n ')
 	print 'Ok. Process initiated...'
+	the_file = raw_input('What file do you want to learn from? \n ')
+	file_type = raw_input('And is this a txt or csv (type txt or csv) \n ')
+	
+	
 	alphabet = revolver()
 	filename = "%s.json" % dialect
 	with open(filename 'w') as f:
