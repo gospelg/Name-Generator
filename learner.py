@@ -162,15 +162,25 @@ def find_frequency(place, x):
 	else:
 		pass
 		
+def revolver():
+	from string import ascii_lowercase
+	alphabet = []
+	for letter in ascii_lowercase:
+		alphabet.append(letter)
+	alphabet.append('blank')
+	alphabet.append('first letter')
+	return alphabet
+
+		
 		
 def main():
 	dialect = raw_input('What language group do these places belong to? \n ')
 	print 'Ok. Process initiated...'
+	alphabet = revolver()
+	filename = "%s.json" % dialect
+	with open(filename 'w') as f:
+		json.dump(base, f)
 	
-	
-
-			
-			
 			
 #example of how to dump dictionaries in a file, which will be used as the knowledge of each language
 #with open('test.json', 'w') as f:
