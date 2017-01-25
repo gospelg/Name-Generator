@@ -199,7 +199,7 @@ def main():
 	learn_language(la_lista)
 #	alphabet = revolver() this will go in main script
 	filename = "%s.json" % lng_group
-	with open(filename 'w') as f:
+	with open(filename, 'w') as f:
 		json.dump(base, f)
 	
 			
