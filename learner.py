@@ -200,8 +200,8 @@ def make_dump(language):
 		os.makedirs(newpath)
 		
 	alphabet = alpha_list()
-	for i in range(len(alpha_list)):
-		filename = newpath + '\%s.json' % alpha_list[i]
+	for i in range(len(alphabet)):
+		filename = newpath + '\%s.json' % alphabet[i]
 		with open(filename, 'w') as f:
 			json.dump(base.all_dicts[i], f)	
 	
