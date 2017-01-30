@@ -204,7 +204,7 @@ def make_dump(language):
 	for i in range(len(alphabet)):
 		filename = newpath + '\%s.json' % alphabet[i]
 		with open(filename, 'w') as f:
-			json.dump(base.all_dicts[i], f)	
+			json.dump(base.all_dicts[i], f, sort_keys=True, indent=4)	
 	
 def main():
 	lng_group = raw_input('What language group do these places belong to? \n ')
