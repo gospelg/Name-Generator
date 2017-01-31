@@ -13,8 +13,8 @@ def first_char(place_names):
 			base.first_letter['total'] = base.first_letter['total'] + 1
 			
 
-#this is the primary learning function. It takes account for each letter in each word fed into it, and records the frequency
-#of those letters in relation to other letters.
+#this is the primary learning function. It calls the first_char function, which records the frequency of the first letter words
+#start with. If then cylces through each letter of each word, and calls the find_frequncy function on it.
 def learn_language(place_names):
 	
 	first_char(place_names)
@@ -24,11 +24,10 @@ def learn_language(place_names):
 			find_frequency(place, i)
 		
 		
-#this one identifies the letter, selects the correct dictionary and adds values.		
+#this one identifies the letter, selects the correct dictionary, then it looks at what letter comes next. It adds a tally in the
+#dictionary for the next letter and a tally for the total.		
 def find_frequency(place, x):
 	char = place[x]
-	#if x == len(place):
-	#	break
 	
 	if char == 'a':
 		nex_char = place[x + 1]
@@ -167,7 +166,9 @@ def find_frequency(place, x):
 		
 	else:
 		pass
-		
+
+#this quick function generates a list with every letter in the alphabet as well as blank and first letter. They are stored as 
+#strings. The main purpose of this is to name the json files that the dictionaries with data are converted to.
 def alpha_list():                           
 	from string import ascii_lowercase
 	alphabet = []
@@ -177,6 +178,8 @@ def alpha_list():
 	alphabet.append('first letter')
 	return alphabet
 
+#this function imports a txt or csv of words that the program uses to gather its data. It takes each item and adds it as a 
+#string to an array.
 def importer(the_file, file_type):
 	learninglist = []
 	if file_type == 'txt':
@@ -192,14 +195,18 @@ def importer(the_file, file_type):
 	return learninglist
 	
 
-		
+#this is the function that dumps all of the data filled dictionaries as json files, for later use in other modules.		
 def make_dump(language):
 	working_dir = os.path.dirname(os.path.abspath( __file__ ))
-	#create a folder for all the json dumps to go into. Just adds it to the cwd
+#create a folder for all the json dumps to go into. Just adds it to the current working dir
 	newpath = working_dir + r'\%s' % language
         if not os.path.exists(newpath):
 		os.makedirs(newpath)
-		
+
+#call alpha_list func to generate the list, which can then be cycled through to name the jsons. The base.all_dicts is an array
+#that contains all of the data dictionaries. Alphabet is an array of strings that matches base.all_dicts's array of dictionaries
+#so as they both cycle through indicies it matches and puts a string name with the variable.
+# ie. alphabet[0] = 'a' all_dicts[0] = a
 	alphabet = alpha_list()
 	for i in range(len(alphabet)):
 		filename = newpath + '\%s.json' % alphabet[i]
