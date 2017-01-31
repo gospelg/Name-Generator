@@ -2,20 +2,19 @@
 import base
 import json
 import os
+from learner import alpha_list
 
-def alpha_list():                           
-	from string import ascii_lowercase
-	alphabet = []
-	for letter in ascii_lowercase:
-		  alphabet.append(letter)
-	  alphabet.append('blank')
-	  alphabet.append('first letter')
-    return alphabet
-
+#imports json data back into dictionaries. The arguement is the dir where the specific jsons are, to be inputed by user in another 
+#function.
 def import_data():
-  alphabet = alpha_list()
-  
-  for i in range(len(alphabet)):
-	    filename = le_path + '\%s.json' % alphabet[i]
+	alphabet = alpha_list(file_path)
+	data_dump = []
+#files are loaded as dictionaries to an array. They are loaded in order, and must be accessed by index. 
+	for i in range(len(alphabet)):
+	    filename = file_path + '\%s.json' % alphabet[i]
 	    with open(filename, 'r') as f:
-		      base.all_dicts[i] = json.load(f)
+		    data_dump.append(json.load(f))
+			
+
+	
+			
