@@ -868,8 +868,14 @@ first_letter = {
 	'total':0,
 	}
 
+#mean is the average len of the place name, with standard deviation
+stats = {
+	"mean":0,
+	"std_dev":0
+        }
+
 all_dicts = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, 
-	     r, s, t, u, v, w, x, y, z, blank, first_letter]
+	     r, s, t, u, v, w, x, y, z, blank, first_letter, stats]
 
 #this quick function generates a list with every letter in the alphabet as well as blank and first letter. They are stored as 
 #strings. The main purpose of this is to name the json files that the dictionaries with data are converted to.
