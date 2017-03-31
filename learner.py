@@ -1,6 +1,5 @@
 import base
 import json
-import csv
 import os
 
 
@@ -167,30 +166,13 @@ def find_frequency(place, x):
 	else:
 		pass
 
-#this quick function generates a list with every letter in the alphabet as well as blank and first letter. They are stored as 
-#strings. The main purpose of this is to name the json files that the dictionaries with data are converted to.
-def alpha_list():                           
-	from string import ascii_lowercase
-	alphabet = []
-	for letter in ascii_lowercase:
-		alphabet.append(letter)
-	alphabet.append('blank')
-	alphabet.append('first letter')
-	return alphabet
 
-#this function imports a txt or csv of words that the program uses to gather its data. It takes each item and adds it as a 
-#string to an array.
-def importer(the_file, file_type):
+#this function imports a txt file with words that the program uses to gather its data.
+def importer(the_file):
 	learninglist = []
-	if file_type == 'txt':
-		with open(the_file, 'r') as f:
-			for line in f:
-				learninglist.append(line.strip())
-	if file_type == 'csv':
-		with open(the_file, 'r') as f:
-			reader = csv.reader(f, delimiter = ',')
-			for i in reader:
-				learninglist.append(i)
+	with open(the_file, 'r') as f:
+		for line in f:
+			learninglist.append(line.strip())
 	learninglist = [x.lower() for x in learninglist]
 	return learninglist
 	
@@ -203,11 +185,12 @@ def make_dump(language):
         if not os.path.exists(newpath):
 		os.makedirs(newpath)
 
-#call alpha_list func to generate the list, which can then be cycled through to name the jsons. The base.all_dicts is an array
-#that contains all of the data dictionaries. Alphabet is an array of strings that matches base.all_dicts's array of dictionaries
-#so as they both cycle through indicies it matches and puts a string name with the variable.
-# ie. alphabet[0] = 'a' all_dicts[0] = a
-	alphabet = alpha_list()
+"""call alpha_list func to generate the list, which can then be cycled through to name the jsons. The base.all_dicts is an array
+that contains all of the data dictionaries. Alphabet is an array of strings that matches base.all_dicts's array of dictionaries
+so as they both cycle through indicies it matches and puts a string name with the variable.
+ie. alphabet[0] = 'a' all_dicts[0] = a
+"""
+	alphabet = base.alpha_list()
 	for i in range(len(alphabet)):
 		filename = newpath + '\%s.json' % alphabet[i]
 		with open(filename, 'w') as f:
@@ -217,8 +200,7 @@ def main():
 	lng_group = raw_input('What language group do these places belong to? \n ')
 	print 'Ok. Process initiated...'
 	the_file = raw_input('What file do you want to learn from? \n ')
-	file_type = raw_input('And is this a txt or csv (type txt or csv) \n ')
-	la_lista = importer(the_file, file_type)
+	la_lista = importer(the_file)
 	learn_language(la_lista)
 	make_dump(lng_group)
 	
