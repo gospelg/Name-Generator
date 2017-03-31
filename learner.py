@@ -1,7 +1,7 @@
 import base
 import json
 import os
-
+from __future__ import division
 
 #this function accounts for the first letter of a word. It is dependent on the first_letter dictionary in base weights.py
 def first_char(place_names):
@@ -28,132 +28,132 @@ def learn_language(place_names):
 def find_frequency(place, x):
 	char = place[x]
 	
-	if char == 'a':
+	if char == 'A':
 		nex_char = place[x + 1]
 		base.a[nex_char] = base.a[nex_char] + 1
 		base.a['total'] = base.a['total'] + 1
 			
-	if char == 'b':
+	if char == 'B':
 		nex_char = place[x + 1]
 		base.b[nex_char] = base.b[nex_char] + 1
 		base.b['total'] = base.b['total'] + 1
 			
-	if char == 'c':
+	if char == 'C':
 		nex_char = place[x + 1]
 		base.c[nex_char] = base.c[nex_char] + 1
 		base.c['total'] = base.c['total'] + 1
 		
-	if char == 'd':
+	if char == 'D':
 		nex_char = place[x + 1]
 		base.d[nex_char] = base.d[nex_char] + 1
 		base.d['total'] = base.d['total'] + 1
 		
-	if char == 'e':
+	if char == 'E':
 		nex_char = place[x + 1]
 		base.e[nex_char] = base.e[nex_char] + 1
 		base.e['total'] = base.e['total'] + 1
 	
-	if char == 'f':
+	if char == 'F':
 		nex_char = place[x + 1]
 		base.f[nex_char] = base.f[nex_char] + 1
 		base.f['total'] = base.f['total'] + 1
 		
-	if char == 'g':
+	if char == 'G':
 		nex_char = place[x + 1]
 		base.g[nex_char] = base.g[nex_char] + 1
 		base.g['total'] = base.g['total'] + 1
 		
-	if char == 'h':
+	if char == 'H':
 		nex_char = place[x + 1]
 		base.h[nex_char] = base.h[nex_char] + 1
 		base.h['total'] = base.h['total'] + 1
 		
-	if char == 'i':
+	if char == 'I':
 		nex_char = place[x + 1]
 		base.i[nex_char] = base.i[nex_char] + 1
 		base.i['total'] = base.i['total'] + 1
 		
-	if char == 'j':
+	if char == 'J':
 		nex_char = place[x + 1]
 		base.j[nex_char] = base.j[nex_char] + 1
 		base.j['total'] = base.j['total'] + 1
 	
-	if char == 'k':
+	if char == 'K':
 		nex_char = place[x + 1]
 		base.k[nex_char] = base.k[nex_char] + 1
 		base.k['total'] = base.k['total'] + 1
 		
-	if char == 'l':
+	if char == 'L':
 		nex_char = place[x + 1]
 		base.l[nex_char] = base.l[nex_char] + 1
 		base.l['total'] = base.l['total'] + 1
 		
-	if char == 'm':
+	if char == 'M':
 		nex_char = place[x + 1]
 		base.m[nex_char] = base.m[nex_char] + 1
 		base.m['total'] = base.m['total'] + 1	
 		
-	if char == 'n':
+	if char == 'N':
 		nex_char = place[x + 1]
 		base.n[nex_char] = base.n[nex_char] + 1
 		base.n['total'] = base.n['total'] + 1		
 	
-	if char == 'o':
+	if char == 'O':
 		nex_char = place[x + 1]
 		base.o[nex_char] = base.o[nex_char] + 1
 		base.o['total'] = base.o['total'] + 1
 		
-	if char == 'p':
+	if char == 'P':
 		nex_char = place[x + 1]
 		base.p[nex_char] = base.p[nex_char] + 1
 		base.p['total'] = base.p['total'] + 1
 		
-	if char == 'q':
+	if char == 'Q':
 		nex_char = place[x + 1]
 		base.q[nex_char] = base.q[nex_char] + 1
 		base.q['total'] = base.q['total'] + 1	
 		
-	if char == 'r':
+	if char == 'R':
 		nex_char = place[x + 1]
 		base.r[nex_char] = base.r[nex_char] + 1
 		base.r['total'] = base.r['total'] + 1
 		
-	if char == 's':
+	if char == 'S':
 		nex_char = place[x + 1]
 		base.s[nex_char] = base.s[nex_char] + 1
 		base.s['total'] = base.s['total'] + 1	
 		
-	if char == 't':
+	if char == 'T':
 		nex_char = place[x + 1]
 		base.t[nex_char] = base.t[nex_char] + 1
 		base.t['total'] = base.t['total'] + 1	
 	
-	if char == 'u':
+	if char == 'U':
 		nex_char = place[x + 1]
 		base.u[nex_char] = base.u[nex_char] + 1
 		base.u['total'] = base.u['total'] + 1	
 		
-	if char == 'v':
+	if char == 'V':
 		nex_char = place[x + 1]
 		base.v[nex_char] = base.v[nex_char] + 1
 		base.v['total'] = base.v['total'] + 1	
 		
-	if char == 'w':
+	if char == 'W':
 		nex_char = place[x + 1]
 		base.w[nex_char] = base.w[nex_char] + 1
 		base.w['total'] = base.w['total'] + 1	
 		
-	if char == 'x':
+	if char == 'X':
 		nex_char = place[x + 1]
 		base.x[nex_char] = base.x[nex_char] + 1
 		base.x['total'] = base.x['total'] + 1		
 		
-	if char == 'y':
+	if char == 'Y':
 		nex_char = place[x + 1]
 		base.y[nex_char] = base.y[nex_char] + 1
 		base.y['total'] = base.y['total'] + 1		
 		
-	if char == 'z':
+	if char == 'Z':
 		nex_char = place[x + 1]
 		base.z[nex_char] = base.z[nex_char] + 1
 		base.z['total'] = base.z['total'] + 1		
@@ -166,14 +166,19 @@ def find_frequency(place, x):
 	else:
 		pass
 
-
+#for each dict, divides each key by total to get an average
+def find_weights(data):
+	for subset in data:
+		for key in sorted(subset):
+			subset[key] = subset[key] / subset["total"]
+			
 #this function imports a txt file with words that the program uses to gather its data.
 def importer(the_file):
 	learninglist = []
 	with open(the_file, 'r') as f:
 		for line in f:
 			learninglist.append(line.strip())
-	learninglist = [x.lower() for x in learninglist]
+	learninglist = [x.upper() for x in learninglist]
 	return learninglist
 	
 
@@ -202,6 +207,7 @@ def main():
 	the_file = raw_input('What file do you want to learn from? \n ')
 	la_lista = importer(the_file)
 	learn_language(la_lista)
+	find_weights(base.all_dicts)
 	make_dump(lng_group)
 	
 	
