@@ -26,7 +26,7 @@ def first_char(place_names):
 #this is the primary learning function. It calls the first_char function, which records the frequency of the first letter words
 #start with. If then cylces through each letter of each word, and calls the find_frequncy function on it.
 def learn_language(place_names):
-    word_stats(la_lista)
+    word_stats(place_names)
     first_char(place_names)
 
     for place in place_names:
