@@ -181,7 +181,7 @@ def find_frequency(place, x):
 
 #for each dict, divides each key by total to get an average
 def find_weights(data):
-    for subset in data:
+    for subset in data[:-1]:
         for key in sorted(subset):
             subset[key] = subset[key] / subset["total"]
             
