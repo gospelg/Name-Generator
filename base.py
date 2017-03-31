@@ -869,4 +869,15 @@ first_letter = {
 	}
 
 all_dicts = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, blank, first_letter]
+
+#this quick function generates a list with every letter in the alphabet as well as blank and first letter. They are stored as 
+#strings. The main purpose of this is to name the json files that the dictionaries with data are converted to.
+def alpha_list():                           
+	from string import ascii_lowercase
+	alphabet = []
+	for letter in ascii_lowercase:
+		alphabet.append(letter)
+	alphabet.append('blank')
+	alphabet.append('first letter')
+	return alphabet
 	
