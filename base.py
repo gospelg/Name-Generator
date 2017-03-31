@@ -1,7 +1,7 @@
 #this module contains sample dictionaries, with basic unmodified values. The learning function can edit these, assigning 
 #probabilities to each value in each dictionary.
 
-A = {
+a = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -32,7 +32,7 @@ A = {
 	'total':0,
 	}
 	
-B = {
+b = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -63,7 +63,7 @@ B = {
 	'total':0,
 	}
 	
-C = {
+c = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -94,7 +94,7 @@ C = {
 	'total':0,
 	}
 	
-D = {
+d = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -125,7 +125,7 @@ D = {
 	'total':0,
 	}
 	
-E = {
+e = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -156,7 +156,7 @@ E = {
 	'total':0,
 	}
 	
-F = {
+f = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -187,7 +187,7 @@ F = {
 	'total':0,
 	}
 	
-G = {
+g = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -218,7 +218,7 @@ G = {
 	'total':0,
 	}
 	
-H = {
+h = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -249,7 +249,7 @@ H = {
 	'total':0,
 	}
 	
-I = {
+i = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -280,7 +280,7 @@ I = {
 	'total':0,
 	}
 	
-J = {
+j = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -311,7 +311,7 @@ J = {
 	'total':0,
 	}
 	
-K = {
+k = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -342,7 +342,7 @@ K = {
 	'total':0,
 	}
 	
-L = {
+l = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -373,7 +373,7 @@ L = {
 	'total':0,
 	}
 	
-M = {
+m = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -404,7 +404,7 @@ M = {
 	'total':0,
 	}
 	
-N = {
+n = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -435,7 +435,7 @@ N = {
 	'total':0,
 	}
 	
-O = {
+o = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -466,7 +466,7 @@ O = {
 	'total':0,
 	}
 	
-P = {
+p = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -497,7 +497,7 @@ P = {
 	'total':0,
 	}
 	
-Q = {
+q = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -528,7 +528,7 @@ Q = {
 	'total':0,
 	}
 	
-R = {
+r = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -559,7 +559,7 @@ R = {
 	'total':0,
 	}
 	
-S = {
+s = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -590,7 +590,7 @@ S = {
 	'total':0,
 	}
 	
-T = {
+t = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -621,7 +621,7 @@ T = {
 	'total':0,
 	}
 	
-U = {
+u = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -652,7 +652,7 @@ U = {
 	'total':0,
 	}
 	
-V = {
+v = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -683,7 +683,7 @@ V = {
 	'total':0,
 	}
 	
-W = {
+w = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -714,7 +714,7 @@ W = {
 	'total':0,
 	}
 	
-X = {
+x = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -745,7 +745,7 @@ X = {
 	'total':0,
 	}
 	
-Y = {
+y = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -776,7 +776,7 @@ Y = {
 	'total':0,
 	}
 	
-Z = {
+z = {
 	'A':0,
 	'B':0,
 	'C':0,
@@ -868,8 +868,8 @@ first_letter = {
 	'total':0,
 	}
 
-all_dicts = [A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, 
-	     R, S, T, U, V, W, X, Y, Z, blank, first_letter]
+all_dicts = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, 
+	     r, s, t, u, v, w, x, y, z, blank, first_letter]
 
 #this quick function generates a list with every letter in the alphabet as well as blank and first letter. They are stored as 
 #strings. The main purpose of this is to name the json files that the dictionaries with data are converted to.
