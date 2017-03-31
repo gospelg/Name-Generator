@@ -886,5 +886,6 @@ def alpha_list():
 		alphabet.append(letter)
 	alphabet.append('blank')
 	alphabet.append('first letter')
+	alphabet.append('stats')
 	return alphabet
 	
