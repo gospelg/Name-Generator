@@ -183,7 +183,10 @@ def find_frequency(place, x):
 def find_weights(data):
     for subset in data[:-1]:
         for key in sorted(subset):
-            subset[key] = subset[key] / subset["total"]
+            if subset["total"] != 0:
+                subset[key] = subset[key] / subset["total"]
+            else:
+                pass
             
 #this function imports a txt file with words that the program uses to gather its data.
 def importer(the_file):
