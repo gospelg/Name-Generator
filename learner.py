@@ -186,7 +186,7 @@ def importer(the_file):
 def make_dump(language):
     working_dir = os.path.dirname(os.path.abspath( __file__ ))
 #create a folder for all the json dumps to go into. Just adds it to the current working dir
-    newpath = working_dir + r'\%s' % language
+    newpath = working_dir + r'\cultures\%s' % language
     if not os.path.exists(newpath):
         os.makedirs(newpath)
 
