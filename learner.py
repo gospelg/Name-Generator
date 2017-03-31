@@ -2,7 +2,18 @@ from __future__ import division
 import base
 import json
 import os
+import numpy as np
 
+
+def word_stats(language):
+    word_len = []
+    for word in language:
+        x = len(word)
+        word_len.append(x)
+    base.stats["mean"] = np.mean(word_len)
+    base.stats["std_dev"] = np.std(word_len)
+    
+    
 #this function accounts for the first letter of a word. 
 def first_char(place_names):
     for place in place_names:
@@ -15,12 +26,14 @@ def first_char(place_names):
 #this is the primary learning function. It calls the first_char function, which records the frequency of the first letter words
 #start with. If then cylces through each letter of each word, and calls the find_frequncy function on it.
 def learn_language(place_names):
-    
+    word_stats(la_lista)
     first_char(place_names)
 
     for place in place_names:
         for i in range(1, len(place) - 1):
             find_frequency(place, i)
+            
+    find_weights(base.all_dicts)
         
         
 #this one identifies the letter, selects the correct dictionary, then it looks at what letter comes next. It adds a tally in the
@@ -208,7 +221,6 @@ def main():
     the_file = raw_input('What file do you want to learn from? \n ')
     la_lista = importer(the_file)
     learn_language(la_lista)
-    find_weights(base.all_dicts)
     make_dump(lng_group)
     
     
